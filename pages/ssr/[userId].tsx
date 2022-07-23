@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
+import { Button } from '@/components/button'
 
 const Home: NextPage = (props: any) => {
   return (
@@ -14,6 +13,7 @@ const Home: NextPage = (props: any) => {
       <div>
         { props.userData.login }
       </div>
+      <Button />
       <img src={ props.userData.avatar_url } alt="" />
     </div>
   )
