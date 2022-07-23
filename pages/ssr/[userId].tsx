@@ -22,7 +22,7 @@ const Home: NextPage = (props: any) => {
 export async function getServerSideProps(context: any) {
   const result = await fetch(`https://api.github.com/users/${context.query.userId}`, {
     method: 'GET',
-  });
+  })
 
   const userData = await result.json();
 
