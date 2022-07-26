@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { RepoInfo } from "@/src/components/RepoInfo/RepoInfo";
-import { NotAvillable } from "../NotAvillable";
+import { NotAvillable } from "@/src/components/RepoInfo/NotAvillable";
 import type { NextPage, GetServerSidePropsContext } from "next";
 
 interface IRepoInfoPage {
