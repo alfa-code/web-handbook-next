@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './button.module.scss';
 
 export function Button() {
     return (
-        <button>
+        <button className={ styles.btn } >
             button
         </button>
     )
