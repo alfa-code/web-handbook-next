@@ -5,9 +5,18 @@ import {NotFound} from "@/components/NotFound/NotFound";
 import {TUserInfo} from "@/src/types/userInfo";
 
 const User: NextPage<TUserInfo> = memo((props) => {
-    const {message, avatar_url, login, email, location, created_at, userId} = props;
+    const {
+        message,
+        avatar_url,
+        login,
+        email,
+        location,
+        created_at,
+        userId
+    } = props;
+    
     const isDataNotFound = !message;
-
+    
     return (
         <div>
             <Head>
@@ -25,7 +34,7 @@ const User: NextPage<TUserInfo> = memo((props) => {
                     <li>
                         Email: {email ? email : 'sorry, email address is not indicated'}
                     </li>
-
+                    
                     <li>
                         Location: {location ? location : 'sorry, location is not indicated'}
                     </li>
@@ -34,7 +43,7 @@ const User: NextPage<TUserInfo> = memo((props) => {
                     </li>
                 </ul>
                 :
-                <NotFound userId={userId}/>}
+                <NotFound userId='AksenovKirill'/>}
         </div>
     )
 });
@@ -42,15 +51,15 @@ const User: NextPage<TUserInfo> = memo((props) => {
 User.displayName = 'User'
 
 export async function getStaticProps(context: GetServerSidePropsContext) {
-
+    
     const data = await fetch(`https://api.github.com/users/AksenovKirill`,
         {
             method: 'GET'
         }
     );
-
+    
     const userData = await data.json();
-
+    
     return {
         props: userData
     }
