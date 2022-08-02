@@ -15,9 +15,19 @@ type TUserInfoPage = {
 }
 
 const UserInfoPage: NextPage<TUserInfoPage> = memo((props) => {
-    const {id, message, avatar_url, login, email, location, created_at, userId} = props;
+    const {
+        id,
+        message,
+        avatar_url,
+        login,
+        email,
+        location,
+        created_at,
+        userId
+    } = props;
+    
     const isDataNotFound = !message;
-
+    
     return (
         <div>
             <Head>
@@ -36,7 +46,7 @@ const UserInfoPage: NextPage<TUserInfoPage> = memo((props) => {
                         <li>
                             Email: {email ? email : 'sorry, email address is not indicated'}
                         </li>
-
+                        
                         <li>
                             Location: {location ? location : 'sorry, location is not indicated'}
                         </li>
@@ -55,15 +65,15 @@ UserInfoPage.displayName = 'UserInfoPage'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
     const {userId} = context.query;
-
+    
     const data = await fetch(`https://api.github.com/users/${userId}`,
         {
             method: 'GET'
         }
     );
-
+    
     const userData = await data.json();
-
+    
     return {
         props: userData
     }
