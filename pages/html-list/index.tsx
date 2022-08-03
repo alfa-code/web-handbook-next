@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 import { PageWrapper } from '@/components/page-wrapper';
 
-const Home: NextPage = () => {
+const HtmlListPage: NextPage = () => {
   return (
     <PageWrapper>
       <Head>
         <title>
-          Web Handbook - Cправочник по html, css и другим веб технологиям.
+          Список html элементов | Список всех HTML тегов
         </title>
         <meta
           name="description"
@@ -21,11 +21,11 @@ const Home: NextPage = () => {
         />
       </Head>
       <h1>
-        Главная страница
+        Список всех HTML тегов
       </h1>
-      <Link href={'/html-list'}>Список всех html тегов</Link>
+      <Link href={'/html-list/a'}>a</Link>
     </PageWrapper>
   );
 };
 
-export default Home;
+export default HtmlListPage;
