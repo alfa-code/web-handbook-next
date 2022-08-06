@@ -1,6 +1,31 @@
-@import "variables.scss";
-
 .btn {
     background-color: rebeccapurple;
-    color: $primary-color;
+
+    // Эти миксины можно вкладывать прямо в классы и передавать в них уже свойства
+    @include mobiles {
+        background-color: red;
+    }
+
+    @include tablets {
+        background-color: yellow;
+    }
+}
+
+// А можно вкладывать классы со свойствами - результат один и тот же. Но предпочтительнее вариант выше.
+@include laptops {
+    .btn {
+        background-color: pink;
+    }
+}
+
+@include desktops {
+    .btn {
+        background-color: skyblue;
+    }
+}
+
+@include largeDesktops {
+    .btn {
+        background-color: brown;
+    }
 }
