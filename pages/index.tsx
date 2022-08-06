@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Button } from '@/components/button';
 
 import { PageWrapper } from '@/components/page-wrapper';
 
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
         Главная страница
       </h1>
       <Link href={'/html-list'}>Список всех html тегов</Link>
+      <Button />
     </PageWrapper>
   );
 };
