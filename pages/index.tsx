@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Button } from '@/components/button';
 import { PageWrapper } from "@/components/page-wrapper";
-import {BannerMainPage} from '@/components/banner-main-page'
+import {BannerOnMainPage} from '@/components/banner-main-page'
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         Главная страница
       </h1>
       <Link href={'/html-list'}>Список всех html тегов</Link>
-        <BannerMainPage/>
+        <BannerOnMainPage/>
       <Button />
     </PageWrapper>
   );
