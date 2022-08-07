@@ -10,4 +10,4 @@ export const PageWrapper: React.FunctionComponent<Props> = (props) => {
             { props.children }
         </div>
     );
-}
+};
