@@ -1,10 +1,10 @@
-import React from "react";
+import React, {memo} from "react";
 import Image from "next/image";
 import { Props } from './props';
 import Banner from "@/public/main.svg";
 import styles from "./BannerOnMainPage.module.scss";
 
-export const BannerOnMainPage: React.FunctionComponent<Props> = (props: Props) => {
+export const BannerOnMainPage: React.FunctionComponent<Props> = memo((props: Props) => {
     return (
         <div className={styles.bannerContent}>
             <div className={styles.bannerTop}>
@@ -18,4 +18,4 @@ export const BannerOnMainPage: React.FunctionComponent<Props> = (props: Props) =
             </div>
         </div>
     );
-};
+});

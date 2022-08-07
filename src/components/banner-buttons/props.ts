@@ -3,6 +3,7 @@ type OwnProps = {
     subTitle?: string,
     image?: string,
     url?: string,
+    children: React.ReactNode,
 }
 
 export type Props = OwnProps;
