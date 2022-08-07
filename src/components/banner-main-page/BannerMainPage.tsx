@@ -1,13 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Banner from "@/public/main.svg";
-import styles from "./banner-main-page.module.scss";
+import styles from "./BannerMainPage.module.scss";
 
-interface Props {
-  children: React.ReactNode;
-}
 
-export const BannerMainPage: React.FunctionComponent<Props> = (props) => {
+
+export const BannerMainPage: React.FunctionComponent = (props) => {
   return (
     <div className={styles.bannerContent}>
       <div className={styles.bannerTop}>

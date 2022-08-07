@@ -1,20 +1,29 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import { Button } from '@/components/button';
 import { PageWrapper } from "@/components/page-wrapper";
+import {BannerMainPage} from '@/components/banner-main-page'
 
 const Home: NextPage = () => {
   return (
     <PageWrapper>
       <Head>
-        <title>Main app page</title>
+        <title>
+          Web Handbook - Cправочник по html, css и другим веб технологиям.
+        </title>
         <meta
           name="description"
           content="Web Handbook - карманный справочник по веб технологиям."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      Main Page
+      <h1>
+        Главная страница
+      </h1>
+      <Link href={'/html-list'}>Список всех html тегов</Link>
+        <BannerMainPage/>
+      <Button />
     </PageWrapper>
   );
 };

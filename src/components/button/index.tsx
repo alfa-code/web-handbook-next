@@ -6,5 +6,5 @@ export function Button() {
         <button className={ styles.btn } >
             button
         </button>
-    )
+    );
 }
