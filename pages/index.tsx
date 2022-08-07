@@ -1,31 +1,32 @@
-import type { NextPage } from 'next';
+import type {NextPage} from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Button } from '@/components/button';
-import { PageWrapper } from "@/components/page-wrapper";
-import {BannerOnMainPage} from '@/components/banner-main-page'
+import {Button} from '@/components/button';
+import {PageWrapper} from "@/components/page-wrapper";
+import {BannerOnMainPage} from "@/components/banner-on-main-page";
+
 
 const Home: NextPage = () => {
-  return (
-    <PageWrapper>
-      <Head>
-        <title>
-          Web Handbook - Cправочник по html, css и другим веб технологиям.
-        </title>
-        <meta
-          name="description"
-          content="Web Handbook - карманный справочник по веб технологиям."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h1>
-        Главная страница
-      </h1>
-      <Link href={'/html-list'}>Список всех html тегов</Link>
-        <BannerOnMainPage/>
-      <Button />
-    </PageWrapper>
-  );
+    return (
+        <PageWrapper>
+            <Head>
+                <title>
+                    Web Handbook - Cправочник по html, css и другим веб технологиям.
+                </title>
+                <meta
+                    name="description"
+                    content="Web Handbook - карманный справочник по веб технологиям."
+                />
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
+            <h1>
+                Главная страница
+            </h1>
+            <Link href={'/html-list'}>Список всех html тегов</Link>
+            <BannerOnMainPage/>
+            <Button/>
+        </PageWrapper>
+    );
 };
 
 export default Home;
