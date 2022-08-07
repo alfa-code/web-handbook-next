@@ -1,6 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import { Icon } from "../../icon";
+import { Icon } from "../icon";
 import { Props } from "./props";
 import styles from "./MainPageLink.module.scss";
 
@@ -18,7 +17,7 @@ export const MainPageLink = (props: Props) => {
             <Icon className={styles.svgIcon} size="16" icon="arrow-down" />
           </div>
         </div>
-        <Image src={image} alt={title} />
+        <img src={image} alt={title} />
       </a>
     </div>
   );
