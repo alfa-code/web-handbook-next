@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { Button } from '@/components/button'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { Button } from '@/components/button';
 
 const Home: NextPage = (props: any) => {
   return (
@@ -16,13 +16,13 @@ const Home: NextPage = (props: any) => {
       <Button />
       <img src={ props.userData.avatar_url } alt="" />
     </div>
-  )
-}
+  );
+};
 
 export async function getServerSideProps(context: any) {
   const result = await fetch(`https://api.github.com/users/${context.query.userId}`, {
     method: 'GET',
-  })
+  });
 
   const userData = await result.json();
 
@@ -30,7 +30,7 @@ export async function getServerSideProps(context: any) {
     props: {
       userData,
     },
-  }
+  };
 }
 
-export default Home
+export default Home;

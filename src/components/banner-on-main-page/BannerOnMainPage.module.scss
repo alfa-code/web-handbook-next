@@ -1,0 +1,47 @@
+@import 'src/styles/variables';
+
+.bannerContent {
+  position: relative;
+  padding: 0 $space-xxl;
+
+  @include desktops {
+    padding: 0 $space-m space-m;
+  }
+}
+
+.bannerTop {
+  display: flex;
+  padding: $space-l $space-l $space-xl;
+  background: $background2;
+  border-radius: 4px;
+  align-items: center;
+
+  img {
+    width: 50%;
+    margin-top: -64px;
+  }
+
+  .textSubheading {
+    margin-top: $space-m;
+  }
+
+  @include desktops {
+    img {
+      width: 45%;
+    }
+
+    .textHeading {
+      margin-top: $space-s;
+      font-size: $font-size-1;
+    }
+  }
+  @include tablets {
+    padding: $space-xl $space-m $space-l;
+    flex-direction: column;
+    justify-content: center;
+
+    Image {
+      width: 100%;
+    }
+  }
+}

@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 // import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 
@@ -16,14 +16,14 @@ const Home: NextPage = (props: any) => {
       </div>
       <img src={ props.userData.avatar_url } alt="" />
     </div>
-  )
-}
+  );
+};
 
 export async function getStaticProps(context: any) {
 
   const result = await fetch(`https://api.github.com/users/hydrock`, {
     method: 'GET',
-  })
+  });
 
   const userData = await result.json();
 
@@ -31,7 +31,7 @@ export async function getStaticProps(context: any) {
     props: {
       userData,
     },
-  }
+  };
 }
 
-export default Home
+export default Home;
