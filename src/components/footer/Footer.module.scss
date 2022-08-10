@@ -1,0 +1,84 @@
+.footer {
+  grid-area: f;
+
+  .footerInner {
+    display: grid;
+    padding: 0 $space-l $space-xxl $space-l;
+    background: $lightBackground;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "c1 c2 c3 c4";
+    justify-content: center;
+
+    @include tablets {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+                "c1 c1"
+                "c2 c3"
+                "c4 c4";
+    }
+  }
+
+  .footerColumn {
+    &:nth-child(1) {
+      grid-area: c1;
+    }
+
+    &:nth-child(2) {
+      grid-area: c2;
+    }
+
+    &:nth-child(3) {
+      grid-area: c3;
+    }
+
+    &:nth-child(4) {
+      grid-area: c4;
+    }
+
+    margin-right: $space-l;
+
+    &:last-child {
+      padding-right: 0;
+      margin-right: 0;
+    }
+
+    @include tablets {
+      padding: $space-s 0;
+      margin: auto;
+
+      &:last-child {
+        margin-right: auto;
+      }
+    }
+  }
+
+  .logo {
+    margin-right: 57px;
+    @include tablets {
+      margin-right: 0;
+    }
+  }
+}
+
+.footerBottom {
+  display: flex;
+  height: 128px;
+  color: $textParagraphs !important;
+  background: $background;
+  align-items: center;
+  justify-content: center;
+}
+
+.textHeading4 {
+  font-family: $fontSecondary;
+  font-size: $font-size-3;
+  font-weight: 700;
+  line-height: $line-height-3;
+  color: $textPrimary;
+  @include desktops {
+    font-size: $font-size-2;
+  }
+  @include tablets{
+    font-size: $font-size-1;
+  }
+}
