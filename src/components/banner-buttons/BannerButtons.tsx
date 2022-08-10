@@ -1,13 +1,11 @@
-import React from "react";
-import { MainPageLink } from "../UI/main-page-link";
+import React, {memo} from "react";
+import Image from "next/image";
+import { MainPageLink } from '../main-page-link/MainPageLink'
 import HTMLImage1 from "@/public/html-directory.svg";
-import styles from "./banner-main-page.module.scss";
+import styles from "./BannerButtons.module.scss";
+import { Props } from './props';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-export const bannerButtons: React.FunctionComponent<Props> = (props) => {
+export const BannerButtons: React.FunctionComponent<Props> = memo((props: Props) => {
   return (
     <div className={styles.mainPageLinks}>
       <MainPageLink
@@ -18,4 +16,4 @@ export const bannerButtons: React.FunctionComponent<Props> = (props) => {
       />
     </div>
   );
-};
+});

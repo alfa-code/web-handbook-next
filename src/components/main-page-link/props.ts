@@ -1,7 +1,7 @@
 type OwnProps = {
   title?: string;
   subTitle?: string;
-  image: string;
+  image?: string;
   url?: string;
 };
 

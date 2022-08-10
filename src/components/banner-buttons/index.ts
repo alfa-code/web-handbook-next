@@ -1,1 +1,1 @@
-export { bannerButtons } from "./BannerButtons";
+export { BannerButtons } from "./BannerButtons";
