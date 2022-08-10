@@ -1,0 +1,19 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-size: $font-size-small;
+  color: $secondary;
+  line-height: $line-height-caption;
+}
+
+.breadcrumbsItem {
+  text-decoration: none;
+
+  &:visited {
+    color: $secondary;
+  }
+}
+
+.breadcrumbsSeparator {
+  margin: 0 $space-xs;
+}
