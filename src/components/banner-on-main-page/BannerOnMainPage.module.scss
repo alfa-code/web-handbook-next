@@ -1,5 +1,3 @@
-@import 'src/styles/variables';
-
 .bannerContent {
   position: relative;
   padding: 0 $space-xxl;
@@ -21,19 +19,11 @@
     margin-top: -64px;
   }
 
-  .textSubheading {
-    margin-top: $space-m;
-  }
-
   @include desktops {
     img {
       width: 45%;
     }
 
-    .textHeading {
-      margin-top: $space-s;
-      font-size: $font-size-1;
-    }
   }
   @include tablets {
     padding: $space-xl $space-m $space-l;
