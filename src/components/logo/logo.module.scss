@@ -1,0 +1,21 @@
+@import "Src/styles/variables.scss";
+
+.logo {
+    margin-right: 57px;
+
+    .logoMobile {
+        display: none;
+    }
+
+    @include tablets {
+        margin-right: auto;
+
+        .logoMobile {
+            display: block;
+        }
+
+        .logoDesktop {
+            display: none;
+        }
+    }
+}

@@ -8,6 +8,7 @@ $descktopWidth: 1400px;
 
 // Переменные для отступов
 
+// Paddings
 $space-xxs: 4px;
 $space-xs: 8px;
 $space-s: 16px;
@@ -25,12 +26,14 @@ $textParagraphs: #546271;
 $textSecondary: #6d7986;
 $textTetriary: #b5bbc2;
 $inverse: #fff;
+
 // Brand
 $brandRed: #ef3124;
 $uiRed: #f04539;
 $primary: #0b1f35;
 $secondary: #858f9a;
 $Gray: #b6bcc3;
+
 // Surface / Background
 $background: #f3f4f5;
 $lightBackground: #f9fafa;
@@ -38,17 +41,20 @@ $background1: #fef9d2;
 $background2: #dae6ff;
 $background3: #d6f5f2;
 $background4: #f5d6d6;
+
 // Illustrations
 $illustrationBlue: #4480ff;
 $illustrationYellow: #ffb96f;
 $illustrationGreen: #40b198;
 $illustrationRed: #ff5c5c;
+
 // Hover
 $hoverBrandRed: #d92c21;
 $hoverPrimary: #000;
 $disabledColor: #d3d6d8;
 
 // Переменные для шрифтов
+// Variables for fonts
 $fontPrimary: "Roboto", sans-serif;
 $fontSecondary: "Rubik", sans-serif;
 
