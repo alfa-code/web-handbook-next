@@ -4,6 +4,10 @@ $tablets: 768px;
 $laptops: 1024px;
 $desktops: 1200px;
 
+$descktopWidth: 1400px;
+
+// Переменные для отступов
+
 // Paddings
 $space-xxs: 4px;
 $space-xs: 8px;
@@ -13,6 +17,8 @@ $space-l: 32px;
 $space-xl: 48px;
 $space-xxl: 64px;
 $space-xxxl: 128px;
+
+// Переменные для цветов
 
 // Typography colors
 $textPrimary: #172a3f;
@@ -47,6 +53,7 @@ $hoverBrandRed: #d92c21;
 $hoverPrimary: #000;
 $disabledColor: #d3d6d8;
 
+// Переменные для шрифтов
 // Variables for fonts
 $fontPrimary: "Roboto", sans-serif;
 $fontSecondary: "Rubik", sans-serif;
@@ -65,3 +72,33 @@ $line-height-3: 26px;
 $font-size-4: 30px;
 $font-size-5: 40px;
 $font-size-6: 48px;
+
+/* Colors */
+$text-primary: #172a3f;
+$text-paragraphs: #546271;
+$text-secondary: #6d7986;
+$text-tetriary: #b5bbc2;
+$text-green: #13a463;
+$text-inverse: #fff;
+
+$brand-red: #ef3124;
+$brand-primary: #172a3f;
+$brand-secondary: #858f9a;
+$brand-gray: #b6bcc3;
+$brand-black: #0b1f35;
+
+$background-main: #f3f4f5;
+$background-light: #f9fafa;
+$background-1: #fef9d2;
+$background-2: #dae6ff;
+$background-3: #d6f5f2;
+$background-green: #13a463;
+$background-white: #fff;
+
+$illustrations-blue: #4480ff;
+$illustration-yellow: #ffb96f;
+$illustration-green: #40b198;
+$illustration-red: #ff5c5c;
+
+$hover-brand-red: #d92c21;
+$hover-primary: #000;
