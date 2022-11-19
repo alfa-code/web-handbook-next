@@ -21,6 +21,11 @@ const Home: NextPage = () => {
                 Главная страница
             </h1>
             <Link href={'/html-list'}>Список всех html тегов</Link>
+            <br />
+            <br />
+            <Link href={'/ssr/users/2'}>ssr/users/2</Link>
+            <br />
+            <br />
             <Button/>
         </PageWrapper>
     );
