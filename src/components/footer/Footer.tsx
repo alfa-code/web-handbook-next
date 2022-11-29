@@ -4,7 +4,7 @@ import styles from "./Footer.module.scss";
 import LogoImage from "@/public/logo.svg";
 import {Props} from './props';
 
-export const Footer: React.FunctionComponent<Props> = memo((props: Props) => {
+export const Footer: React.FunctionComponent<Props> = memo(function Footer(props: Props) {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerInner}>

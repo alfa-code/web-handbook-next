@@ -1,0 +1,279 @@
+// @import "Src/client/breakpoints.scss";
+
+.header {
+    // position: relative;
+    display: flex;
+    height: 96px;
+    padding: 0 $space-l 0 $space-xxl;
+    border-bottom: 1px solid #f3f4f5;
+    align-items: center;
+    grid-area: h;
+
+    @include desktops {
+        padding: 0 $space-l;
+    }
+
+    @include tablets {
+        height: 64px;
+        padding: 0 $space-m;
+        background: $primary;
+    }
+
+    .headerMenu {
+        display: flex;
+        height: calc(100% - 1px);
+
+        @include tablets {
+            display: none;
+
+            &.activeHeader {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 10;
+                display: block;
+                width: 100%;
+                height: auto;
+                padding: 0;
+                padding-bottom: $space-s;
+                text-align: center;
+                background: $inverse;
+            }
+        }
+
+        .headerMenuLink {
+            padding: 36px 0;
+            margin: 0 $space-l;
+            color: $primary;
+            text-decoration: none;
+
+            @include tablets {
+                padding: $space-s 0 0;
+                margin: 0;
+            }
+
+            &:hover {
+                color: $uiRed;
+                text-decoration: none;
+            }
+
+            &.active {
+                box-shadow: 0 2px 0 0 $brandRed;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+            display: flex;
+            padding: 36px 0;
+            margin: 0 $space-l;
+            color: $primary;
+            cursor: pointer;
+            transition: all 0.5s;
+            align-items: center;
+
+            .dropdownActivator {
+                display: flex;
+                align-items: center;
+            }
+
+            @include tablets {
+                padding: 0;
+                margin: 0;
+                flex-direction: column;
+                justify-content: center;
+
+                .dropdownActivator {
+                    display: none;
+                }
+            }
+
+            svg {
+                fill: $textPrimary;
+            }
+
+            &:hover {
+                color: $uiRed;
+
+                svg {
+                    fill: $uiRed;
+                }
+            }
+
+            .dropdownInner {
+                position: absolute;
+                top: 75px;
+                left: -55px;
+                z-index: 10;
+                display: none;
+                width: 169px;
+                flex-direction: column;
+                background: #fff;
+                box-shadow: 0 10px 24px rgba(23, 42, 63, 0.1);
+
+                @include tablets {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    display: flex;
+                    width: 100%;
+                    box-shadow: unset;
+                }
+
+                .dropdownInnerLink {
+                    width: 100%;
+                    padding: $space-s;
+                    color: $primary;
+                    border-bottom: 1px solid $background;
+                    transition: all 0.5s;
+
+                    @include tablets {
+                        padding: $space-s $space-s 0;
+                        border-bottom: none;
+                    }
+
+                    &:hover {
+                        color: $uiRed;
+                        text-decoration: none;
+                    }
+
+                    &.active {
+                        color: $brandRed;
+                        text-decoration: none;
+                    }
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .dropdown.active {
+            box-shadow: 0 2px 0 0 $brandRed;
+            .dropdownInner {
+                display: flex;
+            }
+        }
+    }
+
+    .headerSearch {
+        margin-left: auto;
+        transition: all 1s;
+
+        @include tablets {
+            display: none;
+        }
+
+        .inputWrapper {
+            position: relative;
+
+            .inputWrapperInput {
+                width: 376px;
+                height: 40px;
+                box-sizing: border-box;
+                padding: 0 40px 0 $space-s;
+                color: $textParagraphs;
+                background: none;
+                border: 1px solid $Gray;
+                border-radius: 4px;
+
+                &:active {
+                    border: 1px solid $primary;
+                }
+
+                &::placeholder {
+                    color: $textTetriary;
+                }
+
+                @include tablets {
+                    width: 100%;
+                }
+            }
+
+            .inputWrapperIcon {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+
+                .svgIcon {
+                    fill: $primary;
+                }
+                @include tablets {
+                    .svgIcon {
+                        fill: $inverse;
+                    }
+                }
+            }
+
+            .inputWrapperIcon:hover {
+                .svgIcon {
+                    fill: $uiRed;
+                }
+            }
+        }
+
+        &.mobileActiveSearch {
+            position: absolute;
+            display: block;
+            background: $inverse;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            top: 62px;
+            left: 0;
+            margin-left: 0;
+
+            .inputWrapper {
+                padding: $space-s;
+                border-bottom: 1px solid #f3f4f5;
+            }
+            @include tablets {
+                .inputWrapperInput {
+                    display: block;
+                    background: $inverse;
+                }
+
+                .inputWrapperIcon {
+                    top: 26px;
+                    right: 26px;
+                    .svgIcon {
+                        fill: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+    .headerBtn {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        margin-left: $space-s;
+        transition: all 1s;
+        fill: $inverse;
+    }
+
+    .navigationMobile {
+        display: none;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        background: $inverse;
+        overflow: auto;
+        @include tablets {
+            display: block;
+            &.activeHeader {
+                height: calc(100% - 62px);
+                z-index: 100;
+                nav {
+                    display: block;
+                }
+            }
+        }
+    }
+}

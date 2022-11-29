@@ -4,7 +4,7 @@ import {Props} from './props';
 import Banner from "@/public/main.svg";
 import styles from "./BannerOnMainPage.module.scss";
 
-export const BannerOnMainPage: React.FunctionComponent<Props> = memo((props: Props) => {
+export const BannerOnMainPage: React.FunctionComponent<Props> = memo(function BannerOnMainPage(props: Props) {
     return (
         <div className={styles.bannerContent}>
             <div className={styles.bannerTop}>

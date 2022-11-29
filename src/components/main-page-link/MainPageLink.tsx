@@ -1,10 +1,10 @@
 import React, {memo} from "react";
 import Image from "next/image";
-import {Icon} from "../icon";
+// import {Icon} from "../icon";
 import {Props} from "./props";
 import styles from "./MainPageLink.module.scss";
 
-export const MainPageLink = memo((props: Props) => {
+export const MainPageLink = memo(function MainPageLink(props: Props) {
     const {title, subTitle, image, url} = props;
     
     return (

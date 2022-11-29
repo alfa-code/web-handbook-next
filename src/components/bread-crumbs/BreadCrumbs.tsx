@@ -1,8 +1,9 @@
 import React, {memo} from "react";
 import {Props} from './props';
 import styles from "./BreadCrumbs.module.scss";
+import Link from 'next/link';
 
-export const BreadCrumbs: React.FunctionComponent<Props> = memo((props: Props) => {
+export const BreadCrumbs: React.FunctionComponent<Props> = memo(function BreadCrumbs(props: Props) {
     const breadcrumbsTest = [{name: 'link1', url: '/link'}, {name: 'link2', url: '/link2'}, {name: 'link3', url: '/link3'}];
     return (
         <nav
@@ -11,26 +12,24 @@ export const BreadCrumbs: React.FunctionComponent<Props> = memo((props: Props) =
             aria-label="хлебные крошки"
         >
             <span>
-                <a
+                <Link
                     className={styles.breadcrumbsItem}
                     href="/"
-                    tabIndex={0}
                 >
                     Главная
-                </a>
+                </Link>
             </span>
             {breadcrumbsTest.map((item, key) =>
                 <span key={key}>
                     <span className={styles.breadcrumbsSeparator}>
                         /
                     </span>
-                    <a
+                    <Link
                         className={styles.breadcrumbsItem}
                         href={item.url}
-                        tabIndex={0}
                     >
                         {item.name}
-                    </a>
+                    </Link>
                 </span>
             )}
         </nav>

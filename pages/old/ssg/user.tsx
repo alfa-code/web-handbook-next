@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import type {NextPage, GetServerSidePropsContext} from 'next'
+import type {NextPage, GetServerSidePropsContext} from 'next';
 import Head from "next/head";
 import {NotFound} from "@/components/NotFound/NotFound";
 import {TUserInfo} from "@/src/types/userInfo";
@@ -45,10 +45,10 @@ const User: NextPage<TUserInfo> = memo((props) => {
                 :
                 <NotFound userId='AksenovKirill'/>}
         </div>
-    )
+    );
 });
 
-User.displayName = 'User'
+User.displayName = 'User';
 
 export async function getStaticProps(context: GetServerSidePropsContext) {
     
@@ -62,7 +62,7 @@ export async function getStaticProps(context: GetServerSidePropsContext) {
     
     return {
         props: userData
-    }
+    };
 }
 
 export default User;
