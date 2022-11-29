@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <PageWrapper>
             <Head>
                 <title>
-                    Web Handbook - Cправочник по html, css и другим веб технологиям.
+                    Web Handbook - Cправочник по html, css и другим веб технология.
                 </title>
             </Head>
             <h1>Главная станица</h1>
