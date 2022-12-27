@@ -13,6 +13,7 @@ const Home: NextPage = () => {
                 </title>
             </Head>
             <h1>Главная станица</h1>
+            
         </PageWrapper>
     );
 };
