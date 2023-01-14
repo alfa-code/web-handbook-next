@@ -14,7 +14,7 @@
     }
 
     @include tablets {
-        height: 64px;
+        height: var(--space-xxl);
         padding: 0 $space-m;
         background: $primary;
     }

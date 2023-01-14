@@ -1,7 +1,18 @@
 .navigation {
     display: block;
+    color: var(--text-primary);
+    font-size: 1rem;
 
-    ul {
+    a {
+        color: var(--text-primary);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--brand-red);
+        }
+    }
+
+    .navigationList {
         padding: 0;
         margin: 0;
         list-style: none;
@@ -16,10 +27,8 @@
     border: none;
     cursor: pointer;
     background-color: transparent;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 16px 64px;
-    color: var(--text-primary);
+    font-size: 1em;
+    padding: 16px var(--space-xxl);
 
     .imageWithCaption {
         display: flex;
@@ -42,11 +51,12 @@
     &::after {
         content: '';
         display: inline-block;
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         background-image: url('../../../src/assets/icons/shape.svg');
         background-repeat: no-repeat;
         background-position: center;
+        transform: rotate(180deg);
     }
 }
 
@@ -56,5 +66,44 @@
 
     img {
         filter: grayscale(0);
+    }
+
+    &::after {
+        transform: rotate(0deg);
+    }
+}
+
+.elementsList {
+    list-style: none;
+    margin: 0;
+    padding: 0 64px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+
+    li:first-child {
+        margin-top: 12px;
+    }
+
+    li {
+        margin-bottom: 12px;
+        font-size: 0.82em;
+    }
+}
+
+.renderElementsListLink {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    color: var(--text-paragraphs);
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../../../src/assets/icons/document.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 4px;
     }
 }

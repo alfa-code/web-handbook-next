@@ -34,7 +34,6 @@ const navInfo = [
 
 export const Navigation = (props: Props) => {
     const [activeDirectory, setActiveDirectory] = useState("HTML справочник");
-    console.log('activeDirectory:', activeDirectory);
 
     const renderSidebarNavigation = (directory: any) => {
         return (
@@ -57,45 +56,29 @@ export const Navigation = (props: Props) => {
                         { directory.categoryName }
                     </span>
                 </button>
-                <div>
+                <ul className={ styles.elementsList }>
                     { (activeDirectory === directory.categoryName) && (
                         props.tags.map((tag, i) => {
                             return renderElementsList(tag, i);
                         })
                     )}
-                </div>
+                </ul>
             </li>
         );
     };
 
     const renderElementsList = (tag: any, i: any) => {
         return (
-            <div
-                className={[
-                    styles.dropdown,
-                    // activeCategory == tag ? styles.active : null,
-                ].join(" ")}
+            <li
                 key={i}
-                // onClick={(e) => {
-                //     e.stopPropagation();
-                //     setActiveCategory(
-                //         activeCategory == category.name ? "" : category.name
-                //     );
-                // }}
             >
-                <div className={styles.navigationCategoryCollapseItem}>
-                    <div className={styles.navigationCategoryCollapseItemIcon}>
-                        {/* <Image src={ RedTagIcon } alt="111" /> */}
-                    </div>
-                    <Link
-                        className={styles.navigationCategoryCollapseItemName}
-                        href={ `/html-list/${tag}` }
-                    >
-                        { tag }
-                    </Link>
-                </div>
-
-            </div>
+                <Link
+                    className={styles.renderElementsListLink}
+                    href={ `/html-list/${tag}` }
+                >
+                    { tag }
+                </Link>
+            </li>
         );
     };
 
@@ -103,7 +86,7 @@ export const Navigation = (props: Props) => {
 
     return (
         <nav className={styles.navigation}>
-            <ul>
+            <ul className={ styles.navigationList }>
                 { navigation.map((directory) => {
                     return renderSidebarNavigation(directory);
                 })}
