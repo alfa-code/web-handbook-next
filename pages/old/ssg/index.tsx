@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-// import Image from 'next/image'
+import Image from 'next/image';
 // import styles from '../styles/Home.module.css'
 
 const Home: NextPage = (props: any) => {
@@ -14,7 +14,7 @@ const Home: NextPage = (props: any) => {
       <div>
         { props.userData.login }
       </div>
-      <img src={ props.userData.avatar_url } alt="" />
+      <Image src={ props.userData.avatar_url } alt="" />
     </div>
   );
 };
