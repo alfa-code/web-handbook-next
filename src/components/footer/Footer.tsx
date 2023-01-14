@@ -18,16 +18,13 @@ export const Footer: React.FunctionComponent<Props> = memo(function Footer(props
                 </div>
                 <div className={[styles.footerColumn, "mt-6"].join(" ")}>
                     <div className="text-heading-4">HTML</div>
-                    
+
                     <div className="mt-3">
                         <a href="#" className="link-navigation">
                             HTML справочник
                         </a>
                     </div>
                 </div>
-            </div>
-            <div className={styles.footerBottom}>
-                <div className="text-navigation">«Web Handbook» 2022</div>
             </div>
         </footer>
     );

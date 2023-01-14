@@ -4,6 +4,8 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
 
+import styles from './page-wrapper.module.scss';
+
 interface Props {
     children: React.ReactNode;
 }
@@ -19,9 +21,11 @@ export const PageWrapper: React.FunctionComponent<Props> = (props) => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Header />
-            <div>
+            <div className={ styles.mainContainer }>
                 <Navigation tags={['body', 'a']}/>
-                { props.children }
+                <main>
+                    { props.children }
+                </main>
             </div>
             <Footer />
         </div>

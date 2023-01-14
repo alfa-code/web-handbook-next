@@ -35,6 +35,10 @@ const navInfo = [
 export const Navigation = (props: Props) => {
     const [activeDirectory, setActiveDirectory] = useState("HTML справочник");
 
+    const createAngleBrackets = (tag: string) => {
+        return `<${tag}>`;
+    };
+
     const renderSidebarNavigation = (directory: any) => {
         return (
             <li key={ directory.categoryName } >
@@ -59,7 +63,8 @@ export const Navigation = (props: Props) => {
                 <ul className={ styles.elementsList }>
                     { (activeDirectory === directory.categoryName) && (
                         props.tags.map((tag, i) => {
-                            return renderElementsList(tag, i);
+                            const tagWithAngleBrackets = createAngleBrackets(tag);
+                            return renderElementsList(tagWithAngleBrackets, i);
                         })
                     )}
                 </ul>

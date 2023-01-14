@@ -1,14 +1,13 @@
 import React, { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import HandbookLogo from "../../assets/logo.svg";
-import HandbookLogoMobile from "../../assets/logo_mobile.svg";
+import HandbookLogo from "@/assets/logo.svg";
+import HandbookLogoMobile from "@/assets/logo_mobile.svg";
 import styles from "./logo.module.scss";
 
 export const Logo = memo(() => {
   return (
-    <div className={styles.logo}>
-      <Link href="/" tabIndex={0}>
+      <Link href="/" className={styles.logo}>
         <div>
           <div className={styles.logoDesktop}>
             <Image src={HandbookLogo} alt="Logo" />
@@ -18,7 +17,6 @@ export const Logo = memo(() => {
           </div>
         </div>
       </Link>
-    </div>
   );
 });
 

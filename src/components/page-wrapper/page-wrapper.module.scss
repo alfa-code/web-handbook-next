@@ -1,0 +1,11 @@
+.mainContainer {
+    display: grid;
+    grid-template-columns: 336px 1fr;
+
+    main {
+        background-color: var(--background-5);
+
+        padding-right: var(--space-xxl);
+        padding-left: var(--space-l);
+    }
+}
