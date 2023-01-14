@@ -1,8 +1,8 @@
 import React from 'react';
+import Head from 'next/head';
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Navigation } from "@/components/navigation";
-import Head from 'next/head';
 
 interface Props {
     children: React.ReactNode;
@@ -23,7 +23,7 @@ export const PageWrapper: React.FunctionComponent<Props> = (props) => {
                 <Navigation tags={['body', 'a']}/>
                 { props.children }
             </div>
-            <Footer />
+            <Footer /> 
         </div>
     );
 };
