@@ -55,6 +55,11 @@
   dependencies:
     glob "7.1.7"
 
+"@next/font@^13.1.2":
+  version "13.1.2"
+  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.1.2.tgz#ee809ca03113d0e73495ac5d0e2a978885d0d97e"
+  integrity sha512-NXGXGFGiOKEnvBIHq9cdFTKbHO2/4B3Zd9K27M7j1DioIQVar7oVRqZMYs0h3XMVEZLwjjkdAtqRPCzzd3RtXg==
+
 "@next/swc-android-arm-eabi@13.1.2":
   version "13.1.2"
   resolved "https://registry.yarnpkg.com/@next/swc-android-arm-eabi/-/swc-android-arm-eabi-13.1.2.tgz#eacc7757b480a8150c1aea748bf7892a4fc62f64"
@@ -431,6 +436,11 @@ chalk@^4.0.0:
     readdirp "~3.6.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+classnames@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
 
 client-only@0.0.1:
   version "0.0.1"
