@@ -5,7 +5,7 @@ import {Props} from "./props";
 import styles from "./MainPageLink.module.scss";
 
 export const MainPageLink = memo(function MainPageLink(props: Props) {
-    const {title, subTitle, image, url} = props;
+    const {title = "", subTitle, image, url} = props;
     
     return (
         <div className={styles.mainPageLink}>
