@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-
 import Link from 'next/link';
 import Image from 'next/image';
+import classnames from 'classnames';
 
 type Props = {
     tags: string[];
@@ -11,7 +11,7 @@ type Props = {
         categories?: {
             name?: string,
             url?: string,
-            childrens?: {
+            children?: {
                 text?: string,
                 url?: string
             }[]
@@ -19,11 +19,8 @@ type Props = {
     }[],
     closeMobileMenuCallback?: any;
 }
-// import carretDown from "Assets/images/carret-down.png";
-// import arrowDown from "Assets/images/arrow-down.svg";
 
 import RedTagIcon from '@/src/assets/icons/tag-red.svg';
-console.log('RedTagIcon:', RedTagIcon);
 
 import styles from "./navigation.module.scss";
 
@@ -31,84 +28,47 @@ const navInfo = [
     {
         categoryName: "HTML справочник",
         categoryIconUrl: "html-icon",
+        icon: RedTagIcon,
     },
-    // {
-    //     categoryName: "HTML атрибуты",
-    //     categoryIconUrl: "html-icon",
-    // },
 ];
 
 export const Navigation = (props: Props) => {
-    // const [showNavigation, setShowNavigation] = useState(false);
     const [activeDirectory, setActiveDirectory] = useState("HTML справочник");
-    // const [activeCategory, setActiveCategory] = useState("");
+    console.log('activeDirectory:', activeDirectory);
 
-    const { closeMobileMenuCallback } = props;
-
-    // const x = true;
-
-    // if (x) {
-    //     return 1;
-    // }
-
-    const renderList1 = (directory: any) => {
+    const renderSidebarNavigation = (directory: any) => {
         return (
-            <div
-                className={[
-                    styles.navigationCategory,
-                    styles.dropdown,
-                    activeDirectory == directory.categoryName
-                        ? styles.active
-                        : null,
-                ].join(" ")}
-                key={ directory.categoryName }
-            >
-                <div className={styles.navigationCategoryInner}>
-                    <button
-                        className={styles.navigationCategoryInnerName}
-                        onClick={() =>
-                            setActiveDirectory(
-                                activeDirectory == directory.categoryName
-                                    ? ""
-                                    : directory.categoryName
-                            )
-                        }
-                    >
-                        <div className={styles.buttonInner}>
-                            {/* <Icon
-                                className={styles.svgIcon}
-                                size="24"
-                                icon={directory.categoryIconUrl}
-                            /> */}
-                            <Image src={ RedTagIcon } alt="" />
-                            { directory.categoryName }
-                        </div>
-                        {/* <img
-                            className={styles.arrowIcon}
-                            src={arrowDown}
-                            alt="arrow down"
-                        /> */}
-                    </button>
-                </div>
-                <div
-                    className={[
-                        styles.navigationCategoryCollapse,
-                        styles.dropdownInner,
-                    ].join(" ")}
+            <li key={ directory.categoryName } >
+                <button
+                    className={ classnames({
+                        [styles.navButton]: true,
+                        [styles.navButtonActive]: (activeDirectory ===  directory.categoryName)
+                    }) }
+                    onClick={() =>
+                        setActiveDirectory(
+                            activeDirectory == directory.categoryName
+                                ? ""
+                                : directory.categoryName
+                        )
+                    }
                 >
+                    <span className={styles.imageWithCaption}>
+                        <Image src={ RedTagIcon } alt="" />
+                        { directory.categoryName }
+                    </span>
+                </button>
+                <div>
                     { (activeDirectory === directory.categoryName) && (
                         props.tags.map((tag, i) => {
-                            return renderList2(tag, i);
+                            return renderElementsList(tag, i);
                         })
                     )}
-
-
                 </div>
-            </div>
+            </li>
         );
     };
 
-    const renderList2 = (tag: any, i: any) => {
+    const renderElementsList = (tag: any, i: any) => {
         return (
             <div
                 className={[
@@ -125,12 +85,7 @@ export const Navigation = (props: Props) => {
             >
                 <div className={styles.navigationCategoryCollapseItem}>
                     <div className={styles.navigationCategoryCollapseItemIcon}>
-                        {/* <Icon
-                            className={styles.svgIcon}
-                            size="16"
-                            icon="document-icon"
-                        /> */}
-                        <Image src={ RedTagIcon } alt="111" />
+                        {/* <Image src={ RedTagIcon } alt="111" /> */}
                     </div>
                     <Link
                         className={styles.navigationCategoryCollapseItemName}
@@ -145,15 +100,14 @@ export const Navigation = (props: Props) => {
     };
 
     const navigation = navInfo;
+
     return (
         <nav className={styles.navigation}>
-            {/* <div onClick={() => {setShowNavigation(showNavigation ? false : true)}} className={ styles.navigationCollapseBtn }>
-                &gt;
-            </div> */}
-
-            { navigation.map((directory) => {
-                return renderList1(directory);
-            })}
+            <ul>
+                { navigation.map((directory) => {
+                    return renderSidebarNavigation(directory);
+                })}
+            </ul>
         </nav>
     );
 };

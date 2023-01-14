@@ -2,6 +2,12 @@
     Общие стили для всех веб страниц.
 */
 
+:root {
+    --brand-red: #ef3124;
+
+    --text-primary: #172a3f;
+}
+
 html,
 body {
   padding: 0;
