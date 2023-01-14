@@ -20,7 +20,6 @@ const Home: NextPage = (props: any) => {
 };
 
 export async function getStaticProps(context: any) {
-
   const result = await fetch(`https://api.github.com/users/hydrock`, {
     method: 'GET',
   });

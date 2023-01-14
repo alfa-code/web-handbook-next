@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Button } from '@/components/button';
 
-const Home: NextPage = (props: any) => {
+const UserId: NextPage = (props: any) => {
   return (
     <div>
       <Head>
@@ -33,4 +33,4 @@ export async function getServerSideProps(context: any) {
   };
 }
 
-export default Home;
+export default UserId;

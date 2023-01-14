@@ -1,6 +1,7 @@
 import React from 'react';
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Navigation } from "@/components/navigation";
 import Head from 'next/head';
 
 interface Props {
@@ -18,7 +19,10 @@ export const PageWrapper: React.FunctionComponent<Props> = (props) => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Header />
-            { props.children }
+            <div>
+                <Navigation tags={['body', 'a']}/>
+                { props.children }
+            </div>
             <Footer />
         </div>
     );
