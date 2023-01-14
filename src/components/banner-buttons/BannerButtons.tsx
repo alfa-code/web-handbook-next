@@ -1,5 +1,4 @@
 import React, {memo} from "react";
-// import Image from "next/image";
 import {MainPageLink} from '../main-page-link/MainPageLink';
 import HTMLImage1 from "@/public/html-directory.svg";
 import styles from "./BannerButtons.module.scss";
