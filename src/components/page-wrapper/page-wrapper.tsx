@@ -7,7 +7,7 @@ import { Navigation } from "@/components/navigation";
 interface Props {
     children: React.ReactNode;
 }
- 
+
 export const PageWrapper: React.FunctionComponent<Props> = (props) => {
     return (
         <div>
@@ -23,7 +23,7 @@ export const PageWrapper: React.FunctionComponent<Props> = (props) => {
                 <Navigation tags={['body', 'a']}/>
                 { props.children }
             </div>
-            <Footer /> 
+            <Footer />
         </div>
     );
 };
