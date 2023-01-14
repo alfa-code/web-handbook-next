@@ -80,7 +80,7 @@ export const Navigation = (props: Props) => {
                                 size="24"
                                 icon={directory.categoryIconUrl}
                             /> */}
-                            <img src={ RedTagIcon } alt="" />
+                            <Image src={ RedTagIcon } alt="" />
                             { directory.categoryName }
                         </div>
                         {/* <img
