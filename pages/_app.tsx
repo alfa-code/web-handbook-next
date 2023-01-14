@@ -2,6 +2,9 @@ import { Roboto } from '@next/font/google';
 import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 
+/**
+ * @see https://nextjs.org/docs/basic-features/font-optimization
+ */
 const roboto = Roboto({
     weight: ['400', '700'],
     style: ['normal', 'italic'],
