@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Head from 'next/head';
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -12,7 +12,7 @@ interface Props {
 
 export const PageWrapper: React.FunctionComponent<Props> = (props) => {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <Head>
                 <meta
                     name="description"
@@ -21,12 +21,10 @@ export const PageWrapper: React.FunctionComponent<Props> = (props) => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Header />
-            <div className={ styles.mainContainer }>
-                <Navigation tags={['body', 'a']}/>
-                <main>
-                    { props.children }
-                </main>
-            </div>
+            <Navigation tags={['body', 'a']}/>
+            <main className={styles.main}>
+                { props.children }
+            </main>
             <Footer />
         </div>
     );

@@ -1,8 +1,7 @@
 import type {NextPage} from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
-import {Button} from '@/components/button';
 import {PageWrapper} from "@/components/page-wrapper";
+import {BannerOnMainPage} from '@/src/components/banner-on-main-page';
 
 const Home: NextPage = () => {
     return (
@@ -12,8 +11,8 @@ const Home: NextPage = () => {
                     Web Handbook - Cправочник по html, css и другим веб технология.
                 </title>
             </Head>
-            <h1>Главная станица</h1>
-            <Link href="/old/ssg/user">old link</Link>
+
+            <BannerOnMainPage />
         </PageWrapper>
     );
 };

@@ -12,6 +12,10 @@
         }
     }
 
+    @include media(mobiles, tablets, laptops) {
+        display: none;
+    }
+
     .navigationList {
         padding: 0;
         margin: 0;

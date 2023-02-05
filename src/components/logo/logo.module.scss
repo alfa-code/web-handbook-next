@@ -6,7 +6,7 @@
         display: none;
     }
 
-    @include tablets {
+    @include media(mobiles, tablets, laptops) {
         margin-right: auto;
 
         .logoMobile {

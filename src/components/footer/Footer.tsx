@@ -8,23 +8,26 @@ export const Footer: React.FunctionComponent<Props> = memo(function Footer(props
     return (
         <footer className={styles.footer}>
             <div className={styles.footerInner}>
-                <div className={[styles.footerColumn, "mt-5"].join(" ")}>
+                <div className={styles.footerColumn}>
                     <a href="#" className={styles.logo}>
                         <Image src={LogoImage} alt="Logo"/>
                     </a>
-                    <div className="mt-1 text-body-3">
+                    <div className={styles.footerTitle}>
                         Карманный веб справочник для начинающих и практикующих веб разработчиков.
                     </div>
                 </div>
-                <div className={[styles.footerColumn, "mt-6"].join(" ")}>
-                    <div className="text-heading-4">HTML</div>
+                <div className={styles.footerColumn}>
+                    <div className={styles.footerTextHeading}>HTML</div>
 
-                    <div className="mt-3">
-                        <a href="#" className="link-navigation">
+                    <div className={styles.linkBlock}>
+                        <a href="#" className={styles.linkNavigation}>
                             HTML справочник
                         </a>
                     </div>
                 </div>
+            </div>
+            <div className={styles.footerBottom}>
+                <div className={styles.textNavigation}>«Web Handbook» 2021</div>
             </div>
         </footer>
     );

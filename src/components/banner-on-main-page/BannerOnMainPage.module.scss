@@ -1,9 +1,23 @@
+.bannerWrapper {
+    display: flex;
+    padding: $space-xxl 0;
+    background: $lightBackground;
+
+    @include media(desktops, larges) {
+      padding: $space-xl 0;
+    }
+
+    @include media(mobiles, tablets, laptops) {
+      padding: $space-m 0;
+    }
+}
+
 .bannerContent {
   position: relative;
   padding: 0 $space-xxl;
 
-  @include desktops {
-    padding: 0 $space-m space-m;
+  @include media(mobiles, tablets, laptops, desktops, larges) {
+    padding: 0 $space-m $space-m;
   }
 }
 
@@ -16,22 +30,62 @@
 
   img {
     width: 50%;
+    height: auto;
     margin-top: -64px;
   }
 
-  @include desktops {
+  @include media(desktops, larges) {
+    padding: $space-m $space-m $space-l;
+
     img {
       width: 45%;
     }
-
   }
-  @include tablets {
+
+  @include media(mobiles, tablets, laptops) {
     padding: $space-xl $space-m $space-l;
     flex-direction: column;
     justify-content: center;
 
-    Image {
+    img {
       width: 100%;
     }
+  }
+}
+
+.mainPageLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.title {
+  color: $textPrimary;
+  font-weight: 700;
+  font-size: $font-size-5;
+  line-height: $font-size-6;
+
+  @include media(desktops, larges) {
+    font-size: $font-size-4;
+  }
+
+  @include media(mobiles, tablets, laptops) {
+    font-size: $font-size-2;
+  }
+}
+
+.subTitle {
+  font-family: $fontPrimary;
+  font-size: $font-size-3;
+  font-weight: 400;
+  line-height: 31px;
+  color: $textParagraphs;
+
+  @include media(desktops, larges) {
+    font-size: $font-size-1;
+  }
+
+  @include media(mobiles, tablets, laptops) {
+    font-size: $font-size-small;
   }
 }
