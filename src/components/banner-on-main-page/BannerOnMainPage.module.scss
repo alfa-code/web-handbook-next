@@ -3,7 +3,7 @@
     padding: $space-xxl 0;
     background: $lightBackground;
 
-    @include media(desktops, larges) {
+    @include media(desktops, largeDesktops) {
       padding: $space-xl 0;
     }
 
@@ -16,7 +16,7 @@
   position: relative;
   padding: 0 $space-xxl;
 
-  @include media(mobiles, tablets, laptops, desktops, larges) {
+  @include media(mobiles, tablets, laptops, desktops, largeDesktops) {
     padding: 0 $space-m $space-m;
   }
 }
@@ -34,7 +34,7 @@
     margin-top: -64px;
   }
 
-  @include media(desktops, larges) {
+  @include media(desktops, largeDesktops) {
     padding: $space-m $space-m $space-l;
 
     img {
@@ -65,7 +65,7 @@
   font-size: $font-size-5;
   line-height: $font-size-6;
 
-  @include media(desktops, larges) {
+  @include media(desktops, largeDesktops) {
     font-size: $font-size-4;
   }
 
@@ -81,7 +81,7 @@
   line-height: 31px;
   color: $textParagraphs;
 
-  @include media(desktops, larges) {
+  @include media(desktops, largeDesktops) {
     font-size: $font-size-1;
   }
 

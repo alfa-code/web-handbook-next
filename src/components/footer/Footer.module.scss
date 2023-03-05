@@ -100,7 +100,7 @@
     line-height: $line-height-3;
     color: $textPrimary;
 
-    @include media(desktops, larges) {
+    @include media(desktops, largeDesktops) {
         font-size: $font-size-2;
     }
 

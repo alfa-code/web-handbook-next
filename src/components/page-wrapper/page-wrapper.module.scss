@@ -7,7 +7,7 @@
         "n c s"
         "n f f";
 
-    @include media(desktops, larges) {
+    @include media(desktops, largeDesktops) {
         grid-template-columns: 265px calc(100% - 265px - 265px) 265px;
         grid-template-areas:
             "h h h"

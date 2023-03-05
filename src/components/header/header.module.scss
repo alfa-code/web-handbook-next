@@ -9,7 +9,7 @@
     align-items: center;
     grid-area: h;
 
-    @include media(desktops, larges) {
+    @include media(desktops, largeDesktops) {
         padding: 0 $space-l;
     }
 
