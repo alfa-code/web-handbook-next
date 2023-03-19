@@ -1,11 +1,33 @@
-.mainContainer {
+.wrapper {
     display: grid;
-    grid-template-columns: 336px 1fr;
+    min-width: 320px;
+    grid-template-columns: 336px calc(100% - 336px - 336px) 336px;
+    grid-template-areas:
+        "h h h"
+        "n c s"
+        "n f f";
 
-    main {
-        background-color: var(--background-5);
-
-        padding-right: var(--space-xxl);
-        padding-left: var(--space-l);
+    @include media(desktops, largeDesktops) {
+        grid-template-columns: 265px calc(100% - 265px - 265px) 265px;
+        grid-template-areas:
+            "h h h"
+            "n c c"
+            "f f f";
+        display: grid;
+        min-width: 320px;
     }
+
+    @include media(mobiles, tablets, laptops) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "h"
+            "n"
+            "c"
+            "f";
+    }
+    
+}
+
+.main {
+    grid-area: c;
 }

@@ -8,31 +8,47 @@
 
   transition: box-shadow 0.3s;
 
+  @include media(mobiles, tablets, laptops) {
+    padding: $space-m $space-s;
+    flex-direction: row-reverse;
+    flex: 0 1 100%;
+    justify-content: flex-end;
+  }
+
   box-shadow: 1px 1px 37px -23px rgba(34, 60, 80, 0.2);
 
   &:hover {
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-
+    
     .svgIcon {
       margin-left: 8px;
     }
+  
+    .fakeLink {
+      color: $textPrimary;
+    }
   }
 
-  img {
+  .icon {
     width: 30%;
+    height: auto;
     max-width: 168px;
     max-height: 128px;
     margin-left: auto;
 
-    @include desktops {
+    @include media(desktops, largeDesktops) {
       width: 40%;
     }
 
-    @include tablets {
+    @include media(tablets, laptops) {
       width: 40%;
       max-width: 73.5px;
       max-height: 56px;
       margin: 0 $space-l 0 0;
+    }
+
+    @include mobiles {
+      max-width: 73.5px;
     }
   }
 }
@@ -54,7 +70,8 @@
   font-weight: 500;
   text-decoration: none;
 
-  @include tablets {
+
+  @include media (mobiles, tablets, laptops) {
     top: 0;
     left: 0;
     display: block;
@@ -79,4 +96,36 @@
   margin-left: 4px;
   margin-top: 3px;
   transition: all 0.3s;
+}
+
+.title {
+  font-size: $font-size-3;
+  font-weight: 700;
+  line-height: $line-height-3;
+  color: $textPrimary;
+
+  @include media(desktops, largeDesktops) {
+    font-size: $font-size-2;
+  }
+
+  @include media (mobiles, tablets, laptops) {
+    font-size: $font-size-1;
+  }
+}
+
+.subTitle {
+  font-family: $fontPrimary;
+  font-size: $font-size-1;
+  line-height: $line-height-2;
+  color: $textParagraphs;
+  margin-top: $space-s;
+
+  b {
+      font-weight: 500;
+      color: $primary;
+  }
+
+  @include media(mobiles, tablets, laptops) {
+    font-size: $font-size-small;
+  }
 }

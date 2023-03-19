@@ -23,7 +23,33 @@
 }
 
 @mixin largeDesktops {
-  @media (min-width: #{$desktops}) {
+  @media (min-width: #{$desktops}) and (max-width: #{$largeDesktops - 1px}) {
     @content;
+  }
+}
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @if ($key == mobiles) {
+      @include mobiles {
+        @content;
+      }
+    } @else if ($key == tablets) {
+        @include tablets {
+          @content;
+        }
+    } @else if ($key == laptops) {
+        @include laptops {
+          @content;
+        }
+    } @else if ($key == desktops) {
+        @include desktops {
+          @content;
+        }
+    } @else if ($key == largeDesktops) {
+        @include largeDesktops {
+          @content;
+        }
+    }
   }
 }

@@ -1,33 +1,39 @@
 .footer {
-    padding-top: var(--space-l);
-    padding-bottom: var(--space-l);
-    padding-left: var(--space-xxl);
-    padding-right: var(--space-xxl);
     grid-area: f;
     background: $lightBackground;
 
     .footerInner {
         display: grid;
+        padding: 0 $space-l $space-xxl $space-l;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: "c1 c2 c3 c4";
         justify-content: center;
 
-        @include tablets {
+        @include media(mobiles, tablets) {
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
-                "c1 c1"
-                "c2 c3"
-                "c4 c4";
+            "c1 c1"
+            "c2 c3"
+            "c4 c4";
+        }
+
+        @include laptops {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "c1 c4"
+                "c2 c3";
         }
     }
 
     .footerColumn {
         &:nth-child(1) {
             grid-area: c1;
+            margin-top: $space-xl;
         }
 
         &:nth-child(2) {
             grid-area: c2;
+            margin-top: $space-xxl;
         }
 
         &:nth-child(3) {
@@ -45,9 +51,13 @@
             margin-right: 0;
         }
 
-        @include tablets {
+        @include media(mobiles, tablets, laptops, tablets) {
             padding: $space-s 0;
             margin: auto;
+
+            &:nth-child(1), &:nth-child(2) {
+                margin: auto;
+            }
 
             &:last-child {
                 margin-right: auto;
@@ -57,8 +67,65 @@
 
     .logo {
         margin-right: 57px;
-        @include tablets {
+        
+        @include media(mobiles, tablets, laptops) {
             margin-right: 0;
         }
     }
+}
+
+.footerBottom {
+    display: flex;
+    height: 128px;
+    color: $textParagraphs !important;
+    background: $background;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerTitle {
+    margin-top: $space-xs;
+    font-size: $font-size-small;
+    line-height: $line-height-caption;
+    color: $textSecondary;
+}
+
+.linkBlock {
+    margin-top: $space-m;
+}
+
+.footerTextHeading {
+    font-size: $font-size-3;
+    font-weight: 700;
+    line-height: $line-height-3;
+    color: $textPrimary;
+
+    @include media(desktops, largeDesktops) {
+        font-size: $font-size-2;
+    }
+
+    @include media(mobiles, tablets, laptops) {
+        font-size: $font-size-1;
+    }
+}
+
+.linkNavigation {
+    font-family: $fontPrimary;
+    font-size: $font-size-1;
+    line-height: $line-height-2;
+    color: $textPrimary;
+    text-decoration: none;
+}
+
+.linkNavigation:hover {
+    color: $textPrimary;
+    text-decoration: none;
+}
+
+.textNavigation {
+    font-family: $fontPrimary;
+    font-size: $font-size-1;
+    line-height: $line-height-2;
+    color: $textParagraphs;
+    text-decoration: none;
 }
